@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <br>
+        <br>
+         <h2 class="text-center">Pokemons</h2>
+         <br>
+         <br>
+         <input  class="form-control" name="seachitem" id="myInput" type="text" [(ngModel)]="seachitem" (ngModelChange)="findPokeemon()" placeholder="Looking for specific pokemon details Search..">
+         <br>
+        </div>
+     <div class="col"></div>
+</div>
+    <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 mt-4" *ngFor="let i of pokemondetails">
+        <div class="card" >
+            <img class="card-img-top" src="{{i.details.sprites.front_default}}">
+            <p class="card-block">
+                <span>Name</span> : {{i.details.name}}<br>
+
+                <span>Weight</span> : {{i.details.weight}}<br>
+                <span>Height</span> : {{i.details.height}}<br>
+                <br>
+                <span>Experience</span> : {{i.details.base_experience}}<br>
+                <span>Species</span> : {{i.details.species.name}}<br>
+                <span>Abilities</span>  : <span *ngFor="let h of i.details.abilities">{{h.ability.name + " "}} </span><br>
+            </p>
+
+          
+        </div>
+    </div> 
+</div>
+  </div>
+  
